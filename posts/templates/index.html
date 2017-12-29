@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block body %}
+<div class="content pure-u-1 pure-u-md-3-4">
+    <div>
+        <!-- A wrapper for all the blog posts -->
+        <div class="posts">
+            {% for post in post_list %}
+            <section class="post">
+                <header class="post-header">
+                    <hr>
+                    <a href="{{ post.abs_url }}">
+                        <h2 class="post-title">{{ post.title }}</h2>
+                    </a>
+
+                    <p class="post-meta">
+                        By
+                        <a href="#" class="post-author">Accro</a> under
+                        <a class="post-category post-category-pure" href="#">{{ post.category }}</a>
+                        on {{ post.created_time }}
+                    </p>
+                </header>
+
+                <div class="post-description">
+                    <p>
+                        {{ post.content|safe }}
+                    </p>
+                </div>
+            </section>
+            {% endfor %}
+        </div>
+        {% endblock body %} {% block footer%}
+
+        <div class="pagination">
+            <div class="page-prev">
+                {% if post_list.has_previous %}
+                <a href="?page=1"><<</a>&nbsp;&nbsp;&nbsp;
+                <a href="?page={{ post_list.previous_page_number }}">< Prev&nbsp;</a>
+                {% endif %}
+            </div>
+            <div class="page-next">
+                {% if post_list.has_next %}
+                <a href="?page={{ post_list.next_page_number }}">&nbsp;Next ></a>&nbsp;&nbsp;&nbsp;
+                <a href="?page={{ post_list.paginator.num_pages }}">>></a>
+                {% endif %}
+            </div>
+        </div>
+        {% endblock footer %}
+    </div>
+</div>

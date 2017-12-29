@@ -21,7 +21,7 @@
 
                 <div class="post-description">
                     <p>
-                        {{ post.content|safe }}
+                        {{ post.content|safe|truncatechars:800 }}
                     </p>
                 </div>
             </section>

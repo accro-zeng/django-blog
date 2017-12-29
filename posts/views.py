@@ -16,7 +16,7 @@ def index(request):
                 'markdown.extensions.codehilite',
                 'markdown.extensions.toc',
             ])
-    paginator = Paginator(allpost, 2)
+    paginator = Paginator(allpost, 7)
     page = request.GET.get('page')
     try:
         post_list = paginator.get_page(page)

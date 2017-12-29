@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post
 import markdown
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.views.decorators.cache import cache_page
 # Create your views here.
 
 
+@cache_page(60 * 60)
 def index(request):
     allpost = Post.objects.all().order_by('-created_time')
     for post in allpost:
@@ -27,6 +28,7 @@ def index(request):
     return render(request, 'index.html', context={'post_list': post_list})
 
 
+@cache_page(60 * 60)
 def detail(request, id):
     post = get_object_or_404(Post, id=id)
     post.content = markdown.markdown(

@@ -181,6 +181,11 @@ code, pre {
     padding: 2px 5px;
 }
 
+blockquote {
+    border-left: 5px solid #bfc9d8;
+    padding-left: 1em;
+}
+
 @media (min-width: 48em) {
     .content {
         padding: 2em 3em 0;

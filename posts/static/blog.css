@@ -167,11 +167,11 @@ h3 {
 }
 
 .page-prev {
-    text-align: left;
+    float: left;
 }
 
 .page-next {
-    text-align: right;
+    float: right;
 }
 
 code, pre {

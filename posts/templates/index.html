@@ -32,14 +32,16 @@
         <div class="pagination">
             <div class="page-prev">
                 {% if post_list.has_previous %}
-                <a href="?page=1"><<</a>&nbsp;&nbsp;&nbsp;
-                <a href="?page={{ post_list.previous_page_number }}">< Prev&nbsp;</a>
+                <a href="?page=1">
+                    &lt;&lt;</a>&nbsp;&nbsp;&nbsp;
+                <a href="?page={{ post_list.previous_page_number }}">
+                    &lt; Prev&nbsp;</a>
                 {% endif %}
             </div>
             <div class="page-next">
                 {% if post_list.has_next %}
-                <a href="?page={{ post_list.next_page_number }}">&nbsp;Next ></a>&nbsp;&nbsp;&nbsp;
-                <a href="?page={{ post_list.paginator.num_pages }}">>></a>
+                <a href="?page={{ post_list.next_page_number }}">&nbsp;Next &gt;</a>&nbsp;&nbsp;&nbsp;
+                <a href="?page={{ post_list.paginator.num_pages }}">&gt;&gt;</a>
                 {% endif %}
             </div>
         </div>

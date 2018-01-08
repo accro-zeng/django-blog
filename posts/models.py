@@ -21,9 +21,8 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def abs_url(self):
+    def get_absolute_url(self):
         return reverse(
             'posts:detail', kwargs={
                 'id': self.id
             })  # 依据数据库的id和网页结构给每篇文章生成网址
-

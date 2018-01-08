@@ -24,7 +24,7 @@ SECRET_KEY = 'cax+-a*9dbp9t-=&1i(-x3bbdelz96t)&hc8wv2vw(tgv8%-f%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['accro.co']
 
 # Application definition
 

@@ -6,20 +6,20 @@
             <section class="post">
                 <header class="post-header">
                     <hr>
-                    <a href="{{ post.get_absolute_url }}">
-                        <h2 class="post-title">文章归档</h2>
+
+                    <a href="{{ cate.get_absolute_url }}">
+                        <h2 class="post-title">{{ cate.name }}</h2>
                     </a>
                 </header>
                 <div class="post-description">
-                    {% regroup post_list by created_time.year as posts %} {% for post in posts %}
-                    <ul>
-                        <h3 style="font:bold;">{{ post.grouper }} 年</h3>{% for p in post.list %}
+
+                    <ul>{% for post in post_list %}
                         <li>
-                            <a href="{{ p.get_absolute_url }}" target="_blank">{{ p.title }}</a>
+                            <a href="{{ post.get_absolute_url }}" target="_blank">{{ post.title }}</a>
                         </li>
                         {% endfor %}
                     </ul>
-                    {% endfor %}
+
                 </div>
             </section>
         </div>

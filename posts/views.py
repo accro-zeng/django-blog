@@ -48,6 +48,7 @@ def archives(request):
     return render(request, 'archives.html', context={'post_list': post_list})
 
 
+# @cache_page(60 * 15)
 def category(request, id):
     cate = get_object_or_404(Category, id=id)
     post_list = Post.objects.filter(category=cate).order_by('-created_time')
@@ -56,3 +57,8 @@ def category(request, id):
             'post_list': post_list,
             'cate': cate
         })
+
+
+# @cache_page(60 * 15)
+def about(request):
+    return render(request, 'about.html')

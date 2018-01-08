@@ -108,7 +108,7 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    font-family: Georgia, "Cambria", serif;
+    font-family: Helvetica, Tahoma, Verdana, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
     color: #444;
     line-height: 1.8em;
 }
@@ -175,6 +175,7 @@ h3 {
 }
 
 code, pre {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline-block;
     background: #f3f3f3;
     border-radius: 5px;
